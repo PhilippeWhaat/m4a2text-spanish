@@ -28,13 +28,21 @@ def transcribe_audio(file_path, language='es-ES', chunk_length=30000):
 
         try:
             chunk_transcription = recognizer.recognize_google(audio_data, language=language)
-            transcription.append(chunk_transcription)
+            if chunk_transcription is None or chunk_transcription == '':
+                print(f"Error in chunk {idx + 1}: No transcription returned")
+            else:
+                transcription.append(chunk_transcription)
+        except sr.UnknownValueError:
+            print(f"Error in chunk {idx + 1}: Google Speech Recognition could not understand audio")
+        except sr.RequestError as e:
+            print(f"Error in chunk {idx + 1}: Could not request results from Google Speech Recognition service; {e}")
         except Exception as e:
             print(f"Error in chunk {idx + 1}: {e}")
 
         os.remove("temp_chunk.wav")
 
     return " ".join(transcription)
+
 
 def main():
     input_file = os.path.join(os.path.dirname(PATHPY), "input.m4a")
