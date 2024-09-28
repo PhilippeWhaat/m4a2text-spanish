@@ -9,6 +9,7 @@ def post_process_text_file(file_path):
     text_content = text_content.replace("```\n", " ").replace("```", " ").replace("\n", " ")
     while "  " in text_content:
         text_content = text_content.replace("  ", " ")
+    text_content = text_content.strip()
 
     # Save the post-processed text back to a new file
     output_file_path = os.path.splitext(file_path)[0] + "_processed.txt"

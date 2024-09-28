@@ -92,6 +92,7 @@ def process_audio_file(audio_file_path):
     corrected_text = corrected_text.replace("```\n", " ").replace("```", " ").replace("\n", " ")
     while "  " in corrected_text:
         corrected_text = corrected_text.replace("  ", " ")
+    corrected_text = corrected_text.strip()
 
     # Save the corrected transcription to a file
     with open(transcription_file_name, "w") as outfile:
