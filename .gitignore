@@ -1,8 +1,28 @@
+# macOS system files
 .DS_Store
-*.csv
+.AppleDouble
+.LSOverride
+
+# macOS folder attributes
+Icon?
+._*
+
+# Thumbnails
+.TemporaryItems
+.Trashes
+.DS_Store?
+
+# macOS metadata
+.Spotlight-V100
+.fseventsd
+
+# Document files to ignore
 *.xlsx
 *.xls
-*.m4a
-*.icloud
-*.wav
+*.csv
 *.txt
+*.doc
+*.docx
+
+# General temporary files
+*.tmp

@@ -8,7 +8,7 @@ def convert_m4a_to_wav(input_file, output_file):
     audio = AudioSegment.from_file(input_file, format="m4a")
     audio.export(output_file, format="wav")
 
-def transcribe_audio(file_path, language='es-ES', chunk_length=30000):
+def transcribe_audio(file_path, language='es-MX', chunk_length=30000):
     recognizer = sr.Recognizer()
     audio = AudioSegment.from_wav(file_path)
 
