@@ -4,7 +4,7 @@ from pydub import AudioSegment
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 
-# Set the API key from an environment variable
+# Set the API key from an environment variable with OS module
 OpenAI.api_key = os.getenv("OPENAI_API_KEY")
 
 def process_audio_file(audio_file_path):
