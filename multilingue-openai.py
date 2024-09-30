@@ -89,7 +89,7 @@ def process_audio_file(audio_file_path):
         corrected_text += corrected_chunk + "\n"
 
     # Post-processing to remove unwanted text and spaces
-    corrected_text = corrected_text.replace("```\n", " ").replace("```", " ").replace("\n", " ")
+    corrected_text = corrected_text.replace("```\n", " ").replace("```", " ").replace("\n", " ").replace("...", ".")
     while "  " in corrected_text:
         corrected_text = corrected_text.replace("  ", " ")
     corrected_text = corrected_text.strip()

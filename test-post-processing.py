@@ -6,7 +6,7 @@ def post_process_text_file(file_path):
         text_content = infile.read()
 
     # Perform the post-processing
-    text_content = text_content.replace("```\n", " ").replace("```", " ").replace("\n", " ")
+    text_content = text_content.replace("```\n", " ").replace("```", " ").replace("\n", " ").replace("...", ".")
     while "  " in text_content:
         text_content = text_content.replace("  ", " ")
     text_content = text_content.strip()
